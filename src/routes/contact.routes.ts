@@ -11,4 +11,4 @@ export const contactRouter : Router = express.Router()
     postContact(req , res)
  })
 
- registerDefinition(contactRouter , {tags: "Contact" , mappedSchema: "ContactModel" , path :"/"})
+ registerDefinition(contactRouter , {tags: "Contact" , mappedSchema: "ContactModel" , basePath :""})

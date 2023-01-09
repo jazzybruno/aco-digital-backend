@@ -12,6 +12,7 @@ const app : express.Application = express()
 dbConnection()
 
 //middlewares
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json())
 app.use('/' , contactRouter);
 
@@ -21,10 +22,11 @@ app.get('/' , (req:Request , res:Response , next:NextFunction)=>{
    res.send("Hello World I am from express and runnning using typescript")
 })
 
-// swagger
-new Swaggiffy().setupExpress(app).swaggiffy();
 
 //server
 app.listen(PORT , ()=>{
     console.log("The server is running");
 })
+
+// swagger
+new Swaggiffy().setupExpress(app).swaggiffy();

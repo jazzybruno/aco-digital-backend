@@ -29,7 +29,7 @@
       }
     },
     "paths": {
-      "undefined/contact": {
+      "/contact": {
         "get": {
           "tags": [
             "Contact"
