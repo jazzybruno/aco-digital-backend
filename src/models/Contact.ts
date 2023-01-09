@@ -1,5 +1,6 @@
 import * as mongoose from 'mongoose'
 import { Contact } from '../interfaces/contat'
+import { registerSchema } from 'swaggiffy'
 
 const Schema  = mongoose.Schema
 
@@ -28,3 +29,4 @@ const contactSchema = new Schema({
 })
 
 export const ContactModel = mongoose.model<Contact & mongoose.Document>('Contact', contactSchema)
+registerSchema("ContactModel" , contactSchema , {orm : 'mongoose'})

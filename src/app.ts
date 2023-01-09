@@ -2,6 +2,8 @@ import express , {Request , Response , NextFunction} from "express";
 import bodyParser from "body-parser";
 import { contactRouter } from "./routes/contact.routes";
 import { dbConnection } from "./utils/database";
+import { Swaggiffy } from 'swaggiffy';
+
 const PORT = '5000'
 
 const app : express.Application = express()
@@ -18,6 +20,9 @@ app.use('/' , contactRouter);
 app.get('/' , (req:Request , res:Response , next:NextFunction)=>{
    res.send("Hello World I am from express and runnning using typescript")
 })
+
+// swagger
+new Swaggiffy().setupExpress(app).swaggiffy();
 
 //server
 app.listen(PORT , ()=>{
