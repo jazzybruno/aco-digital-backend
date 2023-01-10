@@ -19,7 +19,7 @@ app.use('/' , contactRouter);
 
 //home route
 app.get('/' , (req:Request , res:Response , next:NextFunction)=>{
-   res.send("Hello World I am from express and runnning using typescript")
+   res.send("The new Backend application")
 })
 
 
